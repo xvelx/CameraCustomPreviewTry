@@ -1,0 +1,44 @@
+
+csquid:S3398È"?Move this method into the anonymous class declared at line 262.(ºÇÒ»ùÿÿÿÿ8‡ÁÙ‘-
+^squid:S3398¶"?Move this method into the anonymous class declared at line 262.(åşÏ8‡ÁÙ‘-
+¥squid:S1186Æ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÕÑ‡şÿÿÿÿ8³ÀÚ‘-
+ˆsquid:S1450Å"dRemove the "mPreviewHandlerThread" field and declare it as a local variable in the relevant methods.(ÎĞ”îúÿÿÿÿ8—ÓöÙ‘-
+^squid:S00112Ù"FDefine and throw a dedicated exception instead of using a generic one.(¯ÌÉ8
+Nsquid:S2093È"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8‡ÁÙ‘-
+^squid:S2142ú"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+Esquid:S1199ª"-Extract this nested code block into a method.(åªôë
+Rsquid:S3985²".Remove this unused private "ImageSaver" class.(ò†­¡ùÿÿÿÿ8‡ÁÙ‘-
+V"squid:SwitchLastCaseIsDefaultCheck‰""Add a default case to this switch.(äÃùÿÿÿÿÿ
+vsquid:S00117Ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö¤ÍÙúÿÿÿÿ8‡ÁÙ‘-
+Jsquid:S1199Š"-Extract this nested code block into a method.(âíûşÿÿÿÿ
+Gsquid:S1148Ì"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ÁÙ‘-
+¥squid:S1186¼"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ìÚ •øÿÿÿÿ8³ÀÚ‘-
+Lsquid:S1199›"-Extract this nested code block into a method.(É°µ™8‡ÁÙ‘-
+@squid:S1148™"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Ysquid:S1141²"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8èÔ¸Ú‘-
+Vsquid:S1155ƒ">Use isEmpty() to check whether the collection is empty or not.(ƒå¶£
+X"squid:SwitchLastCaseIsDefaultCheck–""Add a default case to this switch.(ºÖ8‡ÁÙ‘-
+jsquid:S1301–"KReplace this "switch" statement by "if" statements to increase readability.(ºÖ8‡ÁÙ‘-
+ squid:S1186Á"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·¡¦¤8³ÀÚ‘-
+Jsquid:S1199 "-Extract this nested code block into a method.(¨–úüÿÿÿÿ
+osquid:CommentedOutCodeLineİ"<This block of commented-out lines of code should be removed.(ó¦ƒşÿÿÿÿ8ıµÙ‘-
+Gsquid:S1148Ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡ÁÙ‘-
+Qsquid:S1199—"-Extract this nested code block into a method.(Ÿ’•Úıÿÿÿÿ8‡ÁÙ‘-
+^squid:S2142Ş"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+^squid:S2142˜"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+_squid:S00112ß"FDefine and throw a dedicated exception instead of using a generic one.(Ş¥‹«
+Jsquid:S1199"-Extract this nested code block into a method.(ˆƒµîüÿÿÿÿ
+\
+squid:S106÷"9Replace this use of System.out or System.err by a logger.(¨±Ãİıÿÿÿÿ8ßÁüÙ‘-
+^squid:S3398Í"?Move this method into the anonymous class declared at line 111.(ìÀíå8‡ÁÙ‘-
+jsquid:S3776Õ"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(ª®‰ı
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ïÂš‰ıÿÿÿÿ
+jsquid:CommentedOutCodeLineÑ"<This block of commented-out lines of code should be removed.(ŸĞµá8È¢ƒÚ‘-
+^squid:S3398 "?Move this method into the anonymous class declared at line 162.(ĞÑëú8‡ÁÙ‘-
+_squid:S00112û"FDefine and throw a dedicated exception instead of using a generic one.(¨åÖ¦
+Gsquid:S1148Ë"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8èÔ¸Ú‘-
+u
+squid:S135Ù"YReduce the total number of break and continue statements in this loop to use at most one.(´…÷Ÿúÿÿÿÿ
+ squid:S1186¸"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(èâ’…8³ÀÚ‘-
+Fsquid:S1125»")Remove the literal "false" boolean value.(Ì™Ú·ûÿÿÿÿ
+[squid:S1155">Use isEmpty() to check whether the collection is empty or not.(±à¦ûÿÿÿÿ
