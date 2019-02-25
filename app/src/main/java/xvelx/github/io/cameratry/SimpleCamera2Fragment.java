@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
 import android.hardware.camera2.*;
@@ -11,6 +12,7 @@ import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,7 @@ public class SimpleCamera2Fragment extends Fragment {
     private ImageReader mImageReader;
     private CameraCaptureSession mCameraCaptureSession;
     private ImageView mImageView;
+    private CustomSurfaceView mRendererView;
 
     @Nullable
     @Override
@@ -45,6 +48,7 @@ public class SimpleCamera2Fragment extends Fragment {
         requestCameraPermissionIfRequired();
 
         mImageView = view.findViewById(R.id.imageView);
+        mRendererView = view.findViewById(R.id.rendererView);
         mCameraManager = (CameraManager) getContext().getSystemService(Context.CAMERA_SERVICE);
         openCamera();
     }
@@ -124,6 +128,28 @@ public class SimpleCamera2Fragment extends Fragment {
     }
 
     private void setImageProcessor() {
+        setImageInSurfaceView();
+//        setImageInImageView();
+    }
+
+//    private void setImageInImageView() {
+//        mImageReader.setOnImageAvailableListener(new ImageReader.OnImageAvailableListener() {
+//            @Override
+//            public void onImageAvailable(ImageReader reader) {
+//                Image latestImage = reader.acquireLatestImage();
+//                System.out.println("New Image available to edit and send it to preview -- ");
+//                ByteBuffer buffer = latestImage.getPlanes()[0].getBuffer();
+//                byte[] bytes = new byte[buffer.remaining()];
+//                buffer.get(bytes);
+//                mImageView.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
+//                latestImage.close();
+//            }
+//        }, new Handler());
+//    }
+
+    private void setImageInSurfaceView() {
+        HandlerThread updaterThread = new HandlerThread("updaterThread");
+        updaterThread.start();
         mImageReader.setOnImageAvailableListener(new ImageReader.OnImageAvailableListener() {
             @Override
             public void onImageAvailable(ImageReader reader) {
@@ -132,11 +158,12 @@ public class SimpleCamera2Fragment extends Fragment {
                 ByteBuffer buffer = latestImage.getPlanes()[0].getBuffer();
                 byte[] bytes = new byte[buffer.remaining()];
                 buffer.get(bytes);
-                mImageView.setImageBitmap(BitmapFactory.decodeByteArray(bytes, 0, bytes.length));
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                 latestImage.close();
+                mRendererView.setCurrentImage(bitmap);
             }
             // Need to provide a secondary thread handler for heavy process.
-        }, new Handler());
+        }, new Handler(updaterThread.getLooper()));
     }
 
     private void requestCameraPermissionIfRequired() {
@@ -152,5 +179,11 @@ public class SimpleCamera2Fragment extends Fragment {
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CAMERA_PERMISSION);
         }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mRendererView.stop();
     }
 }
